@@ -11,7 +11,7 @@ Idea: eigen-membership (EigMem)
 
 Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 
-Department of Medical Physics and Biomedical Enfineering, Tehran University of Medical Sciences (TUMS), Tehran, Iran
+@Department of Medical Physics and Biomedical Enfineering, Tehran University of Medical Sciences (TUMS), Tehran, Iran
 
 Date: May 2016 - Jan 2017
 
@@ -19,10 +19,10 @@ E-mail: Ehsan.Eqlimi@ugent.be, Ehsun.Eghlimi@gmail.com,Eghlimi@razi.tums.ac.ir
 
 Reference:
 
-% [1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,
-% F. Mohagheghian, and S. Sanei, “A novel underdetermined source
-% recovery algorithm based on k-sparse component analysis,” Circuits,
-% Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.
+ [1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,
+ F. Mohagheghian, and S. Sanei, “A novel underdetermined source
+ recovery algorithm based on k-sparse component analysis,” Circuits,
+ Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.
 
 Please cite the above papers in case of any usage or benchmarking.
 
