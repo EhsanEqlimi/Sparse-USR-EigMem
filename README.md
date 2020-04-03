@@ -1,8 +1,12 @@
 # Sparse-USR-EigMem
 A new method for recovering the source matrix in underdetermined BSS based on k-SCA.
 
-Assume X=A.S, X , A are known but  S is unknown
+Assume X=A.S.
+
+X and A are known but  S is unknown.
+
 The columns of S are k-Sparse, nemely, there are k non-zero elemnets
+
 Idea: eigen-membership (EigMem)
 
 % Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
