@@ -1,3 +1,20 @@
+% This function calcultes the seperation SNR (dB)
+% Equations (9) and (10) in the
+% following paper)
+% the y-axis quantity of the figures in the following paper
+%**************************************************************************
+% Input variables: 
+% 1)S : original source matrix (n*T)
+% 2)Shat : estimated source matrix (n*T)
+%**************************************************************************
+% Output variable: 
+% SNR (dB) 
+%**************************************************************************
+% Output variable (important ones) 
+% 1) min_krank: minimum k-rank
+% 2) mineig: minimum eigenvalue of m*m-1 submatrices
+%**************************************************************************
+% Witten by Ehsan Eqlimi, @TUMS, Tehran, Iran
 % Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 % Department of Medical Physics and Biomedical Enfineering,
 % Tehran University of Medical Sciences (TUMS), Tehran, Iran
@@ -20,6 +37,5 @@
 % DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
 % IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 % OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 function SNR=FnSNRCalc(S,Shat)
 SNR=10*log10((norm(S))^2/(norm(Shat-S))^2);

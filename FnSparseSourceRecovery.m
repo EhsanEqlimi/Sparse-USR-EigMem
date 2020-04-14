@@ -1,8 +1,23 @@
+% This function estimates the source matrix using EigMem
+% output(SubspaceInds)
+% Each source point could be recovered
+% by pseudo-inverse 
+%**************************************************************************
+% Input variable: 
+% 1)X : mixture matrix (m*T)
+% 2)A: mixing matrix (m*n)
+% 3)SubspaceInds: subspaces indices of each data point (X) 
+%**************************************************************************
+% Output variable (important ones) 
+% 1) Shat: estimated source matrix (n*T) based on pseudo-inverse
+%**************************************************************************
+% Witten by Ehsan Eqlimi, @TUMS, Tehran, Iran
 % Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 % Department of Medical Physics and Biomedical Enfineering,
 % Tehran University of Medical Sciences (TUMS), Tehran, Iran
 % Date: May 2016 - Jan 2017
-% E-mail: Ehsan.Eqlimi@ugent.be, Ehsun.Eghlimi@gmail.com,Eghlimi@razi.tums.ac.ir
+% E-mail: Ehsan.Eqlimi@ugent.be, Ehsun.Eghlimi@gmail.com,
+% Eghlimi@razi.tums.ac.ir
 %**************************************************************************
 % Reference:
 % [1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,

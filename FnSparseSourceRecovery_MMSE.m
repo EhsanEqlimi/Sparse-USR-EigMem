@@ -1,8 +1,26 @@
+% This function estimates the source matrix using EigMem
+% output(SubspaceInds)
+% Each source point could be recovered
+% by pseudo-inverse minimum mean squared error
+% This function imlements Eq (8) in the following paper for tackling noisy case
+%**************************************************************************
+% Input variable: 
+% 1)X : mixture matrix (m*T)
+% 2)A: mixing matrix (m*n)
+% 3)SubspaceInds: subspaces indices of each data point (X) 
+% 4) NoisePwr: The power of the additive noise (E in X=AS+E)
+%**************************************************************************
+% Output variable (important ones) 
+% 1) Shat: estimated source matrix (n*T) based on pseudo-inverse minimum 
+% mean squared error (MMSE)
+%**************************************************************************
+% Witten by Ehsan Eqlimi, @TUMS, Tehran, Iran
 % Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 % Department of Medical Physics and Biomedical Enfineering,
 % Tehran University of Medical Sciences (TUMS), Tehran, Iran
 % Date: May 2016 - Jan 2017
-% E-mail: Ehsan.Eqlimi@ugent.be, Ehsun.Eghlimi@gmail.com,Eghlimi@razi.tums.ac.ir
+% E-mail: Ehsan.Eqlimi@ugent.be, Ehsun.Eghlimi@gmail.com,
+% Eghlimi@razi.tums.ac.ir
 %**************************************************************************
 % Reference:
 % [1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,
@@ -23,12 +41,9 @@
 
 function SHat=FnSparseSourceRecovery_MMSE(X,SubspaceInds,A,NoisePwr)
 SHat=zeros(size(A,2),size(X,2));
-% % NoisePwr=0.0001;
 nR=size(X,1);
 for i=1:size(X,2)
     H=A(:,SubspaceInds(:,i));
     R=X(:,i);
-%    SHat(SubspaceInds(:,i),i)=mmse_vblast_real(R,H,nR,NoisePwr);
     SHat(SubspaceInds(:,i),i)=H'*inv(H*H'+NoisePwr*eye(nR))*R;
-%  SHat(SubspaceInds(:,i),i)=pinv(A(:,SubspaceInds(:,i)))*X(:,i);
 end

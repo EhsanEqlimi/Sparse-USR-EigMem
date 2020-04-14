@@ -1,3 +1,16 @@
+% k_rank_EE function calculates the rank-related information of matrix
+% random A
+% This function is useful for generating an is ill-conditioned and singular
+% mixing matrix
+%**************************************************************************
+% Input variable: 
+% 1)A : mixing matrix (m*n)
+%**************************************************************************
+% Output variable (important ones) 
+% 1) min_krank: minimum k-rank
+% 2) mineig: minimum eigenvalue of m*m-1 submatrices
+%**************************************************************************
+% Written by Bahador Makkiabadi and customized by Ehsan Eqlimi
 % Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 % Department of Medical Physics and Biomedical Enfineering,
 % Tehran University of Medical Sciences (TUMS), Tehran, Iran
