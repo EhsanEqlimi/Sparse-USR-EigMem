@@ -13,7 +13,7 @@
 % and S(:,2) is 2-sparse vectors.
 % Aim: Find  source matrix, S--> Underdetermined Source Recovery (USR)
 %**************************************************************************
-% Witten by Ehsan Eqlimi, @TUMS, Tehra, Iran
+% Witten by Ehsan Eqlimi, @TUMS, Tehran, Iran
 % Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 % Department of Medical Physics and Biomedical Enfineering,
 % Tehran University of Medical Sciences (TUMS), Tehran, Iran
@@ -23,9 +23,9 @@
 %**************************************************************************
 % Reference:
 % [1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,
-% F. Mohagheghian, and S. Sanei, “A novel underdetermined source
-% recovery algorithm based on k-sparse component analysis,” Circuits,
-% Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.
+% F. Mohagheghian, and S. Sanei, â€œA novel underdetermined source
+% recovery algorithm based on k-sparse component analysis,â€ Circuits,
+% Systems, and Signal Processing, vol. 38, no. 3, pp. 1264â€“1286, 2019.
 
 %Please cite the above paper (and future papers) in case of any usage or
 % benchmarking.
