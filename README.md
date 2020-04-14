@@ -1,5 +1,7 @@
 # Sparse-USR-EigMem
-Main and demo m-file to run EigMem Underdetermined Sparse Source Recovery
+Matlab codes to run EigMem Underdetermined Sparse Source Recovery (EigMem-USR)
+
+Run MainEigMem and enjoy!!
 
 Let X = AS: Underdetermined Blind Source Seperation (UBSS) Problem
 
