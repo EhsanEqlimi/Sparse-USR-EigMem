@@ -38,9 +38,9 @@
 %**************************************************************************
 % Reference:
 % [1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,
-% F. Mohagheghian, and S. Sanei, “A novel underdetermined source
-% recovery algorithm based on k-sparse component analysis,” Circuits,
-% Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.
+% F. Mohagheghian, and S. Sanei, â€œA novel underdetermined source
+% recovery algorithm based on k-sparse component analysis,â€ Circuits,
+% Systems, and Signal Processing, vol. 38, no. 3, pp. 1264â€“1286, 2019.
 
 %Please cite the above papers in case of any usage or benchmarking.
 %%
@@ -53,7 +53,8 @@
 % IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 % OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-function [X,S,OrthA,A,Labels,SubspaceInds,SubspaceNum]=FnSparseComponentMixing(m,n,k,T,N,Nk,Var,IterNum,RankTh,AMode,Orth,MixingMode)
+function [X,S,OrthA,A,Labels,SubspaceInds,SubspaceNum]=FnSparseComponentMixing(m,n,k,T,N,Nk,Var,IterNum,RankTh,AMode,MixingMode)
+
 if AMode
     BestKa=0;
     Iter=0;
@@ -79,15 +80,14 @@ OrthA=[];
 X=[];
 Labels=[];
 S=[];
+% % % A=[0.5525 0.3919 0.5707 0.3934 0.6904;0.6863 -0.6066 0.5166 0.8634
+% -0.6007;0.4730 0.6917 -0.6383 -0.3158 0.4032];%Whashizava example
 switch MixingMode
-    case 'kSCA'
+    case 'kSCA' %
         SubspaceInds=P;
         for i=1:c
-            if Orth
-                a=orth(A(:,P(i,:)));
-            else
-                a=(A(:,P(i,:)));
-            end
+            %             a=orth(A(:,P(i,:)));
+            a=(A(:,P(i,:)));
             OrthA=[OrthA a];
             s=randn(k,N(i));
             sWithZeros=zeros(n,N(i));
@@ -95,7 +95,7 @@ switch MixingMode
             IdxActive = zeros(n,1);
             IdxActive(P(i,:))=1;
             IdxActive=logical(IdxActive);
-            sWithZeros(~IdxActive,1:N(i))=Var*randn(n-k,N(i));
+            sWithZeros(~IdxActive,:)=Var*randn(n-k,N(i));
             S=[S sWithZeros];
             x=a*s;
             X=[X x];
@@ -117,27 +117,36 @@ switch MixingMode
             
             S(~IdxActive,i) = Var*randn(n-k,1);
         end
+     
+        
         X=A*S;
-        %     case 'kSCANoisy'
-        %         SubspaceInds=P;
-        %         for i=1:c
-        %             %             a=orth(A(:,P(i,:)));
-        %             % %             a=(A(:,P(i,:)));
-        %             % %             OrthA=[OrthA a];
-        %             s=randn(k,N(i));
-        %             sWithZeros=zeros(n,N(i));
-        %             sWithZeros(P(i,:),:)=s;
-        %             IdxActive = zeros(n,1);
-        %             IdxActive(P(i,:))=1;
-        %             IdxActive=logical(IdxActive);
-        %             sWithZeros(~IdxActive,1:N(i))=Var*randn(n-k,N(i));
-        %             S=[S sWithZeros];
-        %             %             x=a*s;
-        %             %             X=[X x];
-        %             %             S=[S s];
-        %             Labels=[Labels i*ones(1,N(i))];
+        
+    case 'kSCANoisy'
+        SubspaceInds=P;
+        for i=1:c
+            %             a=orth(A(:,P(i,:)));
+            % %             a=(A(:,P(i,:)));
+            % %             OrthA=[OrthA a];
+            s=randn(k,N(i));
+            sWithZeros=zeros(n,N(i));
+            sWithZeros(P(i,:),:)=s;
+            IdxActive = zeros(n,1);
+            IdxActive(P(i,:))=1;
+            IdxActive=logical(IdxActive);
+            sWithZeros(~IdxActive,:)=Var*randn(n-k,N(i));
+            S=[S sWithZeros];
+            %             x=a*s;
+            %             X=[X x];
+            %             S=[S s];
+            Labels=[Labels i*ones(1,N(i))];
+        end
+        %         for j=1:n
+        %             S(j,:)=S(j,:)-mean(S(j,:));
         %         end
-        %         X=A*S;
+        
+        X=A*S;
+        
+        
     case 'MSCA'
         Labels=0;
         for j=1:k
@@ -147,19 +156,12 @@ switch MixingMode
             SubspaceInds{j}=Pj;
             cj=length(Pj);
             for i=1:cj
-                if Orth
-                    a=orth(A(:,Pj(i,:)));
-                else
-                    a=A(:,Pj(i,:));
-                end
+                a=orth(A(:,Pj(i,:)));
                 OrthA=[OrthA a];
                 s=randn(kj,Nk(i,j));
                 sWithZeros=zeros(n,Nk(i,j));
                 sWithZeros(Pj(i,:),:)=s;
-                IdxActive = zeros(n,1);
-                IdxActive(Pj(i,:))=1;
-                IdxActive=logical(IdxActive);
-                sWithZeros(~IdxActive,1:Nk(i,j))=Var*randn(n-kj,Nk(i,j));
+                
                 S=[S sWithZeros];
                 x=a*s;
                 X=[X x];
@@ -170,5 +172,33 @@ switch MixingMode
             
         end
         Labels=Labels(2:end);
+        
+    case 'OnOffGauss' %Equation 8 of Movahedi's paper
+        %         %generating the sources
+        %         p=k/n;
+        %         z=rand(n,T);
+        %         S=(z>p).*randn(n,T)*std_noise+(z<=p).*(randn(n,T)*std_source);
+        %         for j=1:n
+        %             S(j,:)=S(j,:)-mean(S(j,:));
+        %         end
+        
+        %         mu=[0 ;0];
+        %         sigma=[Var];
+        %         p=[k/n;1-(k/n)];
+        %         gm = gmdistribution(mu,sigma,p)
+        %         Pr=k/n;
+        %         Sigma_off=Var;
+        %         idxNZ = zeros(n,1);
+        %         rndPerm = randperm(n);
+        %         idxNZ(rndPerm(1:k)) = 1;
+        %         idxNZ = logical(idxNZ);
+        %
+        %         s = zeros(n,1);
+        %         % if nargin < 4
+        %         s(idxNZ) = randn(k,1);
+        %         % else
+        %         %     s(idxNZ) = fixedActiveValue;
+        %         % end
+        %         s(~idxNZ) = Var*randn(n-k,1);
 end
 SubspaceNum=max(Labels);
