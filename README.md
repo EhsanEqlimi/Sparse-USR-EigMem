@@ -11,7 +11,7 @@ A= mixing matrix (m*n) : known and singular
 
 S= source matrix (n*T) : unknown
 
-n>m: more source than sensors (underdetermined BSS)
+n>m: more sources than sensors (underdetermined BSS)
 
 S matrix is sparse: each column of S is a k-sparse vector, i.e., there is
 
