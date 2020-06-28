@@ -26,7 +26,7 @@ Written by Ehsan Eqlimi, @TUMS, Tehran, Iran
 
 Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 
-Department of Medical Physics and Biomedical Enfineering,
+Department of Medical Physics and Biomedical Engineering,
 
 Tehran University of Medical Sciences (TUMS), Tehran, Iran
 
