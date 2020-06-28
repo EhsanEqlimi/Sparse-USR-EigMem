@@ -22,7 +22,7 @@ and S(:,2) is 2-sparse vectors.
 
 Aim: Find  source matrix, S--> Underdetermined Source Recovery (USR)
 
-Witten by Ehsan Eqlimi, @TUMS, Tehran, Iran
+Written by Ehsan Eqlimi, @TUMS, Tehran, Iran
 
 Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
 
