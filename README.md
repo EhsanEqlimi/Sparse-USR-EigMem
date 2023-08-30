@@ -42,15 +42,14 @@ This code was developed between May 2016 and January 2017.
 
 For any inquiries or questions, you can contact the authors at the following email addresses:
 
-- Ehsan.Eqlimi@ugent.be
-- Ehsun.Eghlimi@gmail.com
-- Eghlimi@razi.tums.ac.ir
+- Ehsan Eqlimi: firstname.lastaname at {outlook.com}
+- 
+- 
 
 ## Reference
 
 Please cite the following paper (and future papers) if you use or benchmark this code:
 
-- [E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour, F. Mohagheghian, and S. Sanei, “A novel underdetermined source recovery algorithm based on k-sparse component analysis,” Circuits, Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.](link_to_paper)
-```
+- [E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour, F. Mohagheghian, and S. Sanei, “A novel underdetermined source recovery algorithm based on k-sparse component analysis,” Circuits, Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.]([link_to_paper](https://link.springer.com/article/10.1007/s00034-018-0910-9)https://link.springer.com/article/10.1007/s00034-018-0910-9)
 
-Replace "link_to_paper" with the actual link to your reference paper. This updated README provides a clear and structured overview of your project and its usage.
+
