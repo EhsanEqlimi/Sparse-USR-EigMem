@@ -49,6 +49,6 @@ For any inquiries or questions, you can contact the authors at the following ema
 
 Please cite the following paper (and future papers) if you use or benchmark this code:
 
-- [E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour, F. Mohagheghian, and S. Sanei, “A novel underdetermined source recovery algorithm based on k-sparse component analysis,” Circuits, Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.](https://link.springer.com/article/10.1007/s00034-018-0910-9)https://link.springer.com/article/10.1007/s00034-018-0910-9)
+- [E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour, F. Mohagheghian, and S. Sanei, “A novel underdetermined source recovery algorithm based on k-sparse component analysis,” Circuits, Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.](https://link.springer.com/article/10.1007/s00034-018-0910-9)
 
 
