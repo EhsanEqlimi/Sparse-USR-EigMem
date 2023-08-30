@@ -1,6 +1,4 @@
-Sure, here's an updated README based on the information you provided:
 
-```markdown
 # Sparse-USR-EigMem
 
 Sparse-USR-EigMem is a collection of MATLAB codes designed to perform EigMem Underdetermined Sparse Source Recovery (EigMem-USR). It addresses the challenge of underdetermined blind source separation (UBSS) by recovering sparse source signals in an underdetermined system.
