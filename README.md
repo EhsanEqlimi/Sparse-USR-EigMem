@@ -32,7 +32,7 @@ To use this code, follow these steps:
 
 ## Copyright
 
-This code is copyright protected by Ehsan Eqlimi and Bahador Makkiabadi, who are affiliated with the Department of Medical Physics and Biomedical Engineering at Tehran University of Medical Sciences (TUMS) in Tehran, Iran.
+This code is copyright protected by Ehsan Eqlimi and Bahador Makkiabadi, who were affiliated with the Department of Medical Physics and Biomedical Engineering at Tehran University of Medical Sciences (TUMS) in Tehran, Iran.
 
 ## Date
 
@@ -43,8 +43,7 @@ This code was developed between May 2016 and January 2017.
 For any inquiries or questions, you can contact the authors at the following email addresses:
 
 - Ehsan Eqlimi: firstname.lastaname at {outlook.com}
-- 
-- 
+  
 
 ## Reference
 
