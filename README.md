@@ -1,46 +1,58 @@
+Sure, here's an updated README based on the information you provided:
+
+```markdown
 # Sparse-USR-EigMem
-Matlab codes to run EigMem Underdetermined Sparse Source Recovery (EigMem-USR)
 
-Run "MainEigMem.m" and enjoy!!
+Sparse-USR-EigMem is a collection of MATLAB codes designed to perform EigMem Underdetermined Sparse Source Recovery (EigMem-USR). It addresses the challenge of underdetermined blind source separation (UBSS) by recovering sparse source signals in an underdetermined system.
 
-Let X = AS: Underdetermined Blind Source Seperation (UBSS) Problem
+## Overview
 
-X= mixture matrix (m*T): known
+In the UBSS problem, we have the following components:
 
-A= mixing matrix (m*n) : known and singular
+- **X**: Mixture matrix (m*T) - Known
+- **A**: Mixing matrix (m*n) - Known and singular
+- **S**: Source matrix (n*T) - Unknown
+- **n > m**: More sources than sensors (underdetermined BSS)
+- **S matrix is sparse**: Each column of S is a k-sparse vector, meaning that there are k <= (m-1) active sources at each time instant. In other words, the sparsity level (k) or the norm-zero of source vectors (s_q) is the number of non-zero elements. For example, if S=[2 0 3 5;3 0 0 -1], S(:,1) is a 3-sparse vector, and S(:,2) is a 2-sparse vector.
 
-S= source matrix (n*T) : unknown
+## Aim
 
-n>m: more sources than sensors (underdetermined BSS)
+The primary goal is to find the source matrix, S, which corresponds to Underdetermined Source Recovery (USR).
 
-S matrix is sparse: each column of S is a k-sparse vector, i.e., there is
+## Usage
 
-k<=(m-1) active sources at each time instant. In other words, sparsity
-level (k) or norm-zero of source vectors (s_q) is the number of non-zero
-elemnets. For example, assume S=[2 0 3 5;3 0 0 -1], S(:,1) is 3-sparse
-and S(:,2) is 2-sparse vectors.
+To use this code, follow these steps:
 
-Aim: Find  source matrix, S--> Underdetermined Source Recovery (USR)
+1. Clone this repository to your local machine.
+2. Open MATLAB.
+3. Run the "MainEigMem.m" script included in this repository.
 
-Written by Ehsan Eqlimi, @TUMS, Tehran, Iran
+## Authors
 
-Copyright @ Ehsan Eqlimi and Bahador Makkiabadi
+- Ehsan Eqlimi
+- Bahador Makkiabadi
 
-Department of Medical Physics and Biomedical Engineering,
+## Copyright
 
-Tehran University of Medical Sciences (TUMS), Tehran, Iran
+This code is copyright protected by Ehsan Eqlimi and Bahador Makkiabadi, who are affiliated with the Department of Medical Physics and Biomedical Engineering at Tehran University of Medical Sciences (TUMS) in Tehran, Iran.
 
-Date: May 2016 - Jan 2017
+## Date
 
-E-mail: Ehsan.Eqlimi@ugent.be, Ehsun.Eghlimi@gmail.com,
+This code was developed between May 2016 and January 2017.
 
-Eghlimi@razi.tums.ac.ir
-**************************************************************************
-Reference:
-[1] E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour,
-F. Mohagheghian, and S. Sanei, “A novel underdetermined source
-recovery algorithm based on k-sparse component analysis,” Circuits,
-Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.
+## Contact
 
-Please cite the above paper (and future papers) in case of any usage or
-benchmarking.
+For any inquiries or questions, you can contact the authors at the following email addresses:
+
+- Ehsan.Eqlimi@ugent.be
+- Ehsun.Eghlimi@gmail.com
+- Eghlimi@razi.tums.ac.ir
+
+## Reference
+
+Please cite the following paper (and future papers) if you use or benchmark this code:
+
+- [E. Eqlimi, B. Makkiabadi, N. Samadzadehaghdam, H. Khajehpour, F. Mohagheghian, and S. Sanei, “A novel underdetermined source recovery algorithm based on k-sparse component analysis,” Circuits, Systems, and Signal Processing, vol. 38, no. 3, pp. 1264–1286, 2019.](link_to_paper)
+```
+
+Replace "link_to_paper" with the actual link to your reference paper. This updated README provides a clear and structured overview of your project and its usage.
